@@ -23,6 +23,34 @@ A modern Flutter news application that fetches and displays the latest news arti
 - Flutter SDK (>=3.0.0)
 - Dart SDK (>=3.0.0)
 
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/Hazem-A7med/news.git
+cd news
+```
+
+2. Install dependencies:
+```bash
+flutter pub get
+```
+
+3. The app is already configured with an API key, but if you want to use your own:
+   - Get an API key from [NewsAPI](https://newsapi.org/)
+   - Update the key in `lib/config/api_config.dart`:
+```dart
+class ApiConfig {
+  static const String apiKey = 'b7d63b190b6445e48b97a01df243eea6';
+  static const String baseUrl = 'https://newsapi.org/v2';
+}
+```
+
+4. Run the app:
+```bash
+flutter run
+```
+
 ## Project Structure
 
 ```
