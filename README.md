@@ -14,44 +14,28 @@ A modern Flutter news application that fetches and displays the latest news arti
 -  Responsive Material Design UI
 -  Proper error handling and retry mechanisms
 -  Image caching for better performance
+-  Smooth page transitions and animations
 
+## Getting Started
 
-### Installation
+### Prerequisites
 
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/news_app.git
-cd news_app
-```
-
-2. Install dependencies:
-```bash
-flutter pub get
-```
-
-3. Create a new file `lib/config/api_config.dart` and add your NewsAPI key:
-```dart
-class ApiConfig {
-  static const String apiKey = 'YOUR_API_KEY_HERE';
-}
-```
-
-4. Run the app:
-```bash
-flutter run
-```
+- Flutter SDK (>=3.0.0)
+- Dart SDK (>=3.0.0)
 
 ## Project Structure
 
 ```
 lib/
+├── config/          # Configuration files
 ├── models/          # Data models
 ├── providers/       # State management
 ├── repositories/    # Data layer
 ├── screens/         # UI screens
 ├── services/        # API services
-├── widgets/         # Reusable widgets
-└── main.dart        # App entry point
+├── utils/          # Utility functions
+├── widgets/        # Reusable widgets
+└── main.dart       # App entry point
 ```
 
 ## Dependencies
@@ -62,13 +46,31 @@ lib/
 - `intl`: Date formatting
 - `flutter_animate`: Animations
 
-## Architecture
+## Features in Detail
 
-The app follows a clean architecture pattern with:
-- Repository pattern for data layer
-- Provider pattern for state management
-- Service layer for API communication
-- Widget composition for UI
+### Authentication
+- Demo login screen with email and password validation
+- Smooth transition to main app
+
+### News Browsing
+- View latest news articles
+- Pull to refresh for latest content
+- Infinite scroll pagination
+- Category filtering
+- Search functionality with debouncing
+
+### Article Details
+- Full article view with images
+- Author and publication date
+- Open in browser option
+- Smooth transitions
+
+### UI/UX
+- Material Design 3
+- Custom animations and transitions
+- Error handling with retry options
+- Loading states and indicators
+- Image caching for performance
 
 ## Error Handling
 
@@ -86,12 +88,3 @@ The app includes comprehensive error handling:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-- [NewsAPI](https://newsapi.org/) for providing the news data
-- Flutter team for the amazing framework
-- Material Design for the UI guidelines

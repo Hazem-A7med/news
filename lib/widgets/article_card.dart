@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../models/article.dart';
 import '../screens/article_detail_screen.dart';
+import '../utils/page_transition.dart';
 import 'cached_image_widget.dart';
 
 class ArticleCard extends StatelessWidget {
@@ -28,12 +29,7 @@ class ArticleCard extends StatelessWidget {
       clipBehavior: Clip.antiAlias,
       child: InkWell(
         onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => ArticleDetailScreen(article: article),
-            ),
-          );
+          context.pushPageRoute(ArticleDetailScreen(article: article));
         },
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
