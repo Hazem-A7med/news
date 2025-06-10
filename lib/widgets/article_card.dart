@@ -40,7 +40,7 @@ class ArticleCard extends StatelessWidget {
                 width: double.infinity,
                 child: CashedImageWidget(
                   image: article.imageUrl,
-                  fit: BoxFit.cover,
+                fit: BoxFit.cover,
                 ),
               ),
             Padding(

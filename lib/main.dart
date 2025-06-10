@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/screens/splash_screen.dart';
 import 'package:provider/provider.dart';
 import 'providers/news_provider.dart';
-import 'screens/splash_screen.dart';
 import 'theme/app_theme.dart';
+import 'core/di/service_locator.dart' as di;
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await di.init();
   runApp(const MyApp());
 }
 

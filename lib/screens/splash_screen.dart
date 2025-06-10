@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'login_screen.dart';
+import 'package:news_app/screens/home_screen.dart';
 import '../utils/page_transition.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -21,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
     await Future.delayed(const Duration(seconds: 2));
     if (!mounted) return;
     
-    context.pushReplacementPageRoute(const LoginScreen());
+    context.pushReplacementPageRoute(const HomeScreen());
   }
 
   @override

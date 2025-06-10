@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../models/article.dart';
 import '../widgets/cached_image_widget.dart';
-import '../widgets/reconnect_widget.dart';
 import 'package:intl/intl.dart';
 
 class ArticleDetailScreen extends StatelessWidget {
@@ -72,9 +71,11 @@ class ArticleDetailScreen extends StatelessWidget {
                     children: [
                       const Icon(Icons.person, size: 16),
                       const SizedBox(width: 4),
-                      Text(
-                        article.author,
-                        style: Theme.of(context).textTheme.bodyMedium,
+                      Expanded(
+                        child: Text(
+                          article.author,
+                          style: Theme.of(context).textTheme.bodyMedium,
+                        ),
                       ),
                     ],
                   ),

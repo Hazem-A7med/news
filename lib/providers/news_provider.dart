@@ -7,7 +7,6 @@ import '../repositories/news_repository_impl.dart';
 class NewsProvider with ChangeNotifier {
   final NewsRepository _repository;
   
-  // State variables
   final List<Article> _articles = [];
   final List<Article> _filteredArticles = [];
   String _error = '';

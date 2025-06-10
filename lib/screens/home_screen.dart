@@ -13,10 +13,11 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateMixin {
   final _searchController = TextEditingController();
   final _scrollController = ScrollController();
   Timer? _debounce;
+
   final List<String> _categories = [
     'general',
     'business',
@@ -30,9 +31,14 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    Future.microtask(
-      () => context.read<NewsProvider>().fetchArticles(),
-    );
+
+    Future.microtask(() {
+      if (mounted) {
+        context.read<NewsProvider>().fetchArticles();
+      }
+    });
+
+
     _scrollController.addListener(_onScroll);
   }
 
@@ -60,6 +66,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('News App'),

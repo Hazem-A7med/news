@@ -1,23 +1,18 @@
 import 'package:dio/dio.dart';
 import '../config/api_config.dart';
 
-/// A service class that handles all network operations using Dio
+
 class NetworkService {
   final Dio _dio;
 
-  /// Creates a new instance of NetworkService with configured Dio client
+
   NetworkService() : _dio = Dio() {
     _dio.options.baseUrl = ApiConfig.baseUrl;
     _dio.options.connectTimeout = const Duration(seconds: 5);
     _dio.options.receiveTimeout = const Duration(seconds: 3);
   }
 
-  /// Performs a GET request to the specified endpoint
-  /// 
-  /// Parameters:
-  /// - [path]: The endpoint path
-  /// - [queryParameters]: Optional query parameters
-  /// - [options]: Optional Dio request options
+
   Future<T> get<T>(
     String path, {
     Map<String, dynamic>? queryParameters,
@@ -37,7 +32,7 @@ class NetworkService {
     }
   }
 
-  /// Handles DioException and converts it to a user-friendly error message
+
   Exception _handleError(DioException error) {
     switch (error.type) {
       case DioExceptionType.connectionTimeout:
@@ -53,7 +48,7 @@ class NetworkService {
     }
   }
 
-  /// Converts HTTP status codes to user-friendly error messages
+
   String _getErrorMessage(int? statusCode) {
     switch (statusCode) {
       case 400:
